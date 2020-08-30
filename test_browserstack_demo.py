@@ -1,38 +1,12 @@
 import os
 
 import pytest
+import json
 from selenium import webdriver
 
-browsers = {'EI - 10': {
-    "os": "Windows",
-    "os_version": "10",
-    "browser": "IE",
-    "browser_version": "11.0"
-}, 'Iphone 8': {
-    "os_version": "11",
-    "device": "iPhone 8 Plus",
-    "real_mobile": "true",
-    "browserstack.local": "false"
-}, 'Pixel 3a': {
-    "os_version": "9.0",
-    "device": "Google Pixel 3a",
-    "real_mobile": "true",
-    "browserstack.local": "false"
-}, 'Pixel 4': {
-    "os_version": "11.0",
-    "device": "Google Pixel 4",
-    "real_mobile": "true",
-    "browserstack.local": "false"
-}, 'Chrome': {
-    "os": "Windows",
-    "os_version": "8",
-    "browser": "Chrome",
-    "browser_version": "latest",
-    "browserstack.local": "false",
-    "browserstack.selenium_version": "3.14.0"
-}
-}
 
+with open('browsers.json') as json_file:
+    browsers = json.load (json_file)
 
 @pytest.fixture(scope="module", params=browsers)
 def driver(request):
