@@ -1,6 +1,6 @@
 # browserstack_test
 
-a simple python test suite example that runs 3 tests across web 5 browers on Browserstack in parallele.
+A simple python test suite example that runs 3 tests across web 5 browsers on Browserstack in parallel.
 
 ## setup
 
